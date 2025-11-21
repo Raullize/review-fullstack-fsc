@@ -14,28 +14,25 @@ function App() {
   }, [tasks]);
 
   useEffect(() => {
-    const fetchTasks = async () => {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos?_limit=10",
-        {
-          method: "GET",
-        }
-      );
-      const data = await response.json();
-      setTasks(data);
-    };
+    // const fetchTasks = async () => {
+    //   const response = await fetch(
+    //     "https://jsonplaceholder.typicode.com/todos?_limit=10",
+    //     {
+    //       method: "GET",
+    //     }
+    //   );
+    //   const data = await response.json();
+    //   setTasks(data);
+    // };
     // SE QUISER, VOCÊ PODE CHAMAR UMA API PARA PEGAR AS TAREFAS
     // fetchTasks();
   }, []);
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
-      // PRECISO ATUALIZAR ESSA TAREFA
       if (task.id === taskId) {
         return { ...task, isCompleted: !task.isCompleted };
       }
-
-      // NÃO PRECISO ATUALIZAR ESSA TAREFA
       return task;
     });
     setTasks(newTasks);
