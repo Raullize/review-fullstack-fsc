@@ -1,14 +1,7 @@
 import ViewDetailsButton from "@/app/components/ViewDetailsButton";
 import { getProducts } from "../../data";
-// Server Component - TODOS OS COMPONENTES NO NEXT SÃO SERVER COMPONENT POR PADRÃO
-// Server Component - pode ter acesso a recursos do servidor, como bancos de dados, APIs, etc.
-// Server Component - NÃO PODE TER INTERATIVIDADE
 
-// Client Components - PODEM TER INTERATIVIDADE (useState, onClick, useEffect)
-// Client Components - NÃO PODE TER ACESSO A RECURSOS DO SERVIDOR, como bancos de dados, APIs, etc.
-// Client Components - NÃO PODEM SER ASYNC
 export default async function Home() {
-  // Eu posso acessar meu banco de dados
   const products = await getProducts();
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
